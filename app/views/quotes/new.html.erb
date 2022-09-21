@@ -1,0 +1,18 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to quotes"), quotes_path %>
+
+  <div class="header">
+    <h1>New quote</h1>
+  </div>
+
+  <%= turbo_frame_tag @quote do %>
+    <%= render "form", quote: @quote %>
+  <% end %>
+</main>
+
+<!--
+Here @quote is a new record, so the three following expressions are equivalent:
+turbo_frame_tag "new_quote"
+turbo_frame_tag Quote.new
+turbo_frame_tag @quote
+-->

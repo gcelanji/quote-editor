@@ -1,0 +1,15 @@
+<% flash.each do |flash_type, message| %>
+  <div 
+    class="flash__message"
+    data-controller="removals"
+    data-action="animationend->removals#remove"
+  >
+    <%= message %>
+  </div>
+<% end %>
+
+<!--
+The Stimulus library allows us to link JavaScript behavior
+defined in Stimulus Controllers to HTML thanks to naming 
+conventions on data attributes. 
+-->
